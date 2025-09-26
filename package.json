@@ -1,0 +1,24 @@
+{
+  "name": "better-auth-lab",
+  "version": "1.0.0",
+  "description": "Trying BetterAuth on sqlite",
+  "homepage": "https://github.com/mjul/better-auth-lab#readme",
+  "bugs": {
+    "url": "https://github.com/mjul/better-auth-lab/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjul/better-auth-lab.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "better-auth": "^1.3.18",
+    "better-sqlite3": "^12.4.1"
+  }
+}
