@@ -19,7 +19,30 @@ Then to generate the schema for the database:
     npx @better-auth/cli generate --output db/schema.sql
 ```
 
-I put this in version control so you can have a look.
+I put this in version control so you can have a look: [db/schema.sql](./db/schema.sql).
 
 
+## Adding Plugins
+
+You can add plugins for roles and organisations, to make user permissions richer.
+The `admin` plugin adds a `role` to users. `organization` adds, well, organisations.
+
+Update the `auth.ts` file to add these:
+
+
+```typescript
+import { betterAuth } from "better-auth";
+import { admin, organization } from "better-auth/plugins";
+import Database from "better-sqlite3";
+
+export const auth = betterAuth({
+    database: new Database("./sqlite.db"),
+    plugins: [
+	    admin(), 
+	    organization()
+    ]
+})
+```
+
+See the output in [db/schema-with-admin-and-organization.sql](./db/schema-with-admin-and-organization.sql).
 
